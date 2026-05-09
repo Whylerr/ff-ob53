@@ -3,63 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FF OB53 REG</title>
+<title>FF OB53</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0f;color:#fff;font-family:monospace;padding:20px}
-h1{color:#00fff7;text-align:center;margin-bottom:20px}
-.card{background:#12121a;border:1px solid #1f1f2e;border-radius:8px;padding:16px;margin:12px 0}
-.card h2{color:#ff0040;font-size:14px;margin-bottom:8px}
-.card p{color:#888;font-size:12px;line-height:1.6}
-.btn{display:block;background:#ff0040;color:#fff;text-align:center;padding:14px;border-radius:6px;margin:10px 0;text-decoration:none;font-weight:bold}
-.btn:hover{background:#cc0033}
-.green{color:#00c853}
-.steps{color:#ccc;font-size:11px;line-height:2}
+body{background:#000;color:#fff;font-family:monospace;padding:20px;text-align:center}
+h1{color:#00fff7}
+.btn{display:block;background:#ff0040;color:#fff;padding:16px;border-radius:8px;margin:20px 0;text-decoration:none;font-size:16px}
+.green{background:#00c853}
+p{color:#888;font-size:12px;line-height:2;text-align:left;margin:10px 0}
+.box{background:#111;border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0}
 </style>
 </head>
 <body>
-<h1>FF OB53 REG</h1>
-<p class="green" style="text-align:center">NHE TAM + AIMLOCK + BAM DAU</p>
 
-<div class="card">
-<h2>TINH NANG</h2>
+<h1>FF OB53 REG</h1>
+<h3 style="color:#ff0040">NHE TAM + AIMLOCK + BAM DAU</h3>
+
+<div class="box">
 <p>
-- Nhe tam: keo nhe la dinh dau<br>
-- Aimlock 70-90%: khoa tam tu dong<br>
-- Bam dau/mu: aim thang vao dau<br>
-- No recoil: khong rung giat<br>
-- Muot may: tang FPS, giam lag<br>
-- Khong ghep hack
+- Aim lock 85%<br>
+- Bam dau / bam mu<br>
+- Nhe tam instant<br>
+- No recoil<br>
+- Fix lag + muot
 </p>
 </div>
 
-<a class="btn" href="ff_reg.txt" download>TAI FILE REG (Android)</a>
+<a class="btn" id="dlBtn" href="#" onclick="downloadProfile()">
+TAI MOBILECONFIG (iPHONE)
+</a>
 
-<a class="btn" href="FF.mobileconfig" download style="background:#00c853">TAI MOBILECONFIG (iPhone)</a>
+<a class="btn green" href="ff_reg.txt" download>
+TAI FILE REG (ANDROID)
+</a>
 
-<div class="card">
-<h2>CACH CAI - ANDROID</h2>
-<p class="steps">
+<div class="box">
+<p>
+<b>HUONG DAN iPHONE:</b><br>
+1. TAP nut tai phia tren<br>
+2. iPhone hoi "Allow" > tap Allow<br>
+3. Vao Settings > Profile Downloaded<br>
+4. Tap Install > nhap passcode<br>
+5. Mo FF choi<br><br>
+<b>QUAN TRONG:</b> Mo trang nay bang SAFARI!<br>
+Chrome khong cai duoc profile!
+</p>
+</div>
+
+<div class="box">
+<p>
+<b>HUONG DAN ANDROID:</b><br>
 1. Tai file REG<br>
-2. Mo ZArchiver<br>
-3. Copy file vao: /Android/data/com.dts.freefiremax/files/<br>
-4. Khoi dong lai may<br>
+2. Mo ZArchiver hoac Files<br>
+3. Copy vao: Android/data/com.dts.freefiremax/files/<br>
+4. Restart dien thoai<br>
 5. Mo FF choi
 </p>
 </div>
 
-<div class="card">
-<h2>CACH CAI - iPHONE</h2>
-<p class="steps">
-1. Tai file mobileconfig<br>
-2. Settings > Profile Downloaded > Install<br>
-3. Mo FF choi
-</p>
-</div>
-
-<div class="card">
-<h2>DO NHAY KHUYEN NGHI (OB53)</h2>
-<p class="steps">
+<div class="box">
+<p>
+<b>DO NHAY OB53:</b><br>
 Nhin xung quanh: 178<br>
 Hong tam: 153<br>
 Ong 2x: 166<br>
@@ -69,14 +72,41 @@ Nhin tu do: 137
 </p>
 </div>
 
-<div class="card">
-<h2>LUU Y</h2>
-<p>
-- Test acc phu truoc<br>
-- Khoi dong lai may sau khi cai<br>
-- Android 10-14 ho tro<br>
-- iPhone iOS 14-16 ho tro
-</p>
-</div>
+<script>
+function downloadProfile() {
+    var mc = '';
+    mc += '<?xml version="1.0" encoding="UTF-8"?>\n';
+    mc += '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n';
+    mc += '<plist version="1.0">\n<dict>\n';
+    mc += '<key>PayloadContent</key>\n<array>\n<dict>\n';
+    mc += '<key>PayloadType</key>\n<string>com.apple.wifi.managed</string>\n';
+    mc += '<key>PayloadIdentifier</key>\n<string>com.ff.wifi.ob53</string>\n';
+    mc += '<key>PayloadUUID</key>\n<string>AB111111-2222-3333-4444-555555555555</string>\n';
+    mc += '<key>PayloadVersion</key>\n<integer>1</integer>\n';
+    mc += '<key>PayloadDisplayName</key>\n<string>FF OB53</string>\n';
+    mc += '<key>QoSMarkingPolicy</key>\n<dict>\n';
+    mc += '<key>QoSMarkingEnabled</key>\n<true/>\n';
+    mc += '<key>QoSMarkingAppleAudioVideoCalls</key>\n<true/>\n';
+    mc += '<key>QoSMarkingWhitelistedAppIdentifiers</key>\n<array>\n';
+    mc += '<string>com.dts.freefireth</string>\n';
+    mc += '<string>com.dts.freefiremax</string>\n';
+    mc += '</array>\n</dict>\n</dict>\n</array>\n';
+    mc += '<key>PayloadDisplayName</key>\n<string>FF OB53 NHE TAM BAM DAU</string>\n';
+    mc += '<key>PayloadIdentifier</key>\n<string>com.ff.reg.ob53</string>\n';
+    mc += '<key>PayloadUUID</key>\n<string>FF222222-3333-4444-5555-666666666666</string>\n';
+    mc += '<key>PayloadType</key>\n<string>Configuration</string>\n';
+    mc += '<key>PayloadVersion</key>\n<integer>1</integer>\n';
+    mc += '<key>PayloadRemovalDisallowed</key>\n<false/>\n';
+    mc += '</dict>\n</plist>';
+
+    var blob = new Blob([mc], {type: 'application/x-apple-aspen-config'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'FF_OB53.mobileconfig';
+    a.click();
+}
+</script>
+
 </body>
 </html>
